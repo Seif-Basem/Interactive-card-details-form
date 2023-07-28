@@ -1,0 +1,272 @@
+:root {
+  --Red: hsl(0, 100%, 66%);
+  --White: hsl(0, 0%, 100%);
+  --Light-grayish-violet: hsl(270, 3%, 87%);
+  --Dark-grayish-violet: hsl(279, 6%, 55%);
+  --Very-dark-violet: hsl(278, 68%, 11%);
+}
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: var(--Light-grayish-violet);
+    min-height: 100vh;
+}
+.container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 767px) {
+  .container{
+    flex-direction: column;
+    gap: 90px;
+  }
+}
+main .container .leftside{
+  background-image: url(../images/bg-main-desktop.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 30%;
+  position: relative;
+}
+@media (max-width: 767px) {
+  main .container .leftside{
+    background-image: url(../images/bg-main-mobile.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 30vh;
+    width: 100%;
+    position: relative;
+  }
+}
+.leftside .cards{
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+@media (max-width: 767px) {
+  .leftside .cards{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+.leftside .frontcard{
+  position: relative;
+  transform: translateX(-100px);
+}
+@media (max-width: 767px) {
+  .leftside .frontcard{
+    transform: translate(-25px, 55px);
+  }
+  .leftside .frontcard img{
+    width: 300px;
+  }
+}
+.leftside .frontcard .content{
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+@media (max-width: 767px) {
+  .leftside .frontcard .content img{
+    width: 50px;
+  }
+}
+.leftside .frontcard .content h2{
+  margin-top: 60px;
+  font-size: 35px;
+  font-weight: 400;
+  color: var(--White);
+}
+@media (max-width: 767px) {
+  .leftside .frontcard .content h2{
+    margin-top: 30px;
+    font-size: 23px;
+  }
+}
+.leftside .frontcard .content .info{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  color: var(--White);
+  letter-spacing: 3px;
+  width: 385px;
+}
+@media (max-width: 767px) {
+  .leftside .frontcard .content .info{
+    font-size: 11px;
+    width: 260px;
+  }
+}
+.leftside .frontcard .content .info .name{
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.leftside .backcard{
+  position: relative;
+  transform: translateX(-20px);
+}
+@media (max-width: 767px) {
+  .leftside .backcard{
+    transform: translate(20px, -237px);
+    z-index: -1;
+  }
+  .leftside .backcard img{
+    width: 300px;
+  }
+}
+.leftside .backcard .cvc{
+  position: absolute;
+  top: 110px;
+  right: 60px;
+  color: var(--White);
+  letter-spacing: 3px;
+}
+@media (max-width: 767px) {
+  .leftside .backcard .cvc{
+    position: absolute;
+    top: 73px;
+    right: 36px;
+    font-size: 12px;
+  }
+}
+.rightside{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.rightside form label{
+  display: block;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 3px;
+  font-size: 13px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+.rightside form input{
+  width: 350px;
+  height: 40px;
+  border-radius: 7px;
+  padding: 10px;
+  border: 1px solid var(--Dark-grayish-violet);
+  background-color: #f3f3f3;
+  font-size: 17px;
+  font-weight: 600;
+}
+.rightside form input.tiny{
+  width: 80px;
+}
+.rightside form input.bigger{
+  width: 150px;
+}
+.rightside form input:focus{
+  outline: none;
+  border: 1px solid hsl(278, 68%, 25%);
+}
+.rightside form input::placeholder{
+  font-family: 'Space Grotesk', sans-serif;
+  color: var(--Dark-grayish-violet);
+  font-weight: 500;
+  font-size: 16px;
+}
+.rightside form .data{
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+.rightside form .data .date .info{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.rightside form a{
+  margin-top: 30px;
+  width: 100%;
+  height: 50px;
+  border-radius: 7px;
+  border-width: 0;
+  background-color: var(--Very-dark-violet);
+  color: var(--White);
+  font-size: 15px;
+  display: block;
+  padding: 15px 0;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.rightside form a:hover{
+  background-color: hsl(278, 68%, 25%);
+}
+.error{
+  color: var(--Red);
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 5px;
+}
+.hidden{
+  display: none;
+}
+form input.border-red{
+  border: 1px solid var(--Red);
+}
+
+.complete{
+  width: 350px;
+  text-align: center;
+  /* display: none; */
+}
+.complete h3{
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 3px;
+  font-size: 25px;
+  margin-top: 30px;
+}
+.complete p{
+  color: var(--Dark-grayish-violet);
+  font-weight: 500;
+  margin-top: 5px;
+}
+.complete a{
+  margin-top: 30px;
+  width: 100%;
+  height: 50px;
+  border-radius: 7px;
+  border-width: 0;
+  background-color: var(--Very-dark-violet);
+  color: var(--White);
+  font-size: 15px;
+  display: block;
+  padding: 15px 0;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.complete a:hover{
+  background-color: hsl(278, 68%, 25%);
+}
+
+
+/* Hide the up and down arrows in the number input */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

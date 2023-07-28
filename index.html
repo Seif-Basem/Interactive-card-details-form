@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Interactive card details form</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="container">
+
+      <div class="leftside">
+        <div class="cards">
+          <div class="frontcard">
+            <img src="images/bg-card-front.png" alt="">
+            <div class="content">
+              <img src="images/card-logo.svg" alt="">
+              <h2 id="numbercard">0000 0000 0000 0000</h2>
+              <div class="info">
+                <div class="name" id="namecard">Jane Appleseed</div>
+                <div class="date">
+                  <span id="monthcard">00</span>
+                  /
+                  <span id="yearcard">00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="backcard">
+            <img src="images/bg-card-back.png" alt="">
+            <div class="cvc" id="cvccard">000</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rightside">
+        <form id="form" action="">
+          <label for="">Cardholder Name</label>
+          <input id="nameinput" type="text" placeholder="e.g. Jane Appleseed">
+          <div id="nameerror" class="nameerror error hidden">Can't be blank</div>
+          <label for="">Card Number</label>
+          <input id="numberinput" type="number" maxlength="16" minlength="16" oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" placeholder="e.g. 1234 5678 9123 0000">
+          <div id="numberformat" class="numberformat error hidden">Worng format, need more numbers</div>
+          <div id="numbererror" class="numbererror error hidden">Can't be blank</div>
+          <div class="data">
+            <div class="date">
+              <label for="">Exp. Date (MM/YY)</label>
+              <div class="info">
+                <input class="tiny" id="monthinput" type="number" maxlength="2" minlength="2" oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" placeholder="MM">
+                <input class="tiny" id="yearinput" type="number" maxlength="2" minlength="2" oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" placeholder="YY">
+              </div>
+              <div id="dateerror" class="dateerror error hidden">Can't be blank</div>
+            </div>
+            <div class="cvc">
+              <label for="">CVC</label>
+              <input class="bigger" id="cvcinput" type="number" maxlength="3" minlength="3" oninput="if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" placeholder="e.g. 123">
+              <div id="cvcerror" class="cvcerror error hidden">Can't be blank</div>
+            </div>
+          </div>
+          <a id="senddata">Confirm</a>
+        </form>
+
+        <div id="complete" class="complete hidden">
+          <img src="images/icon-complete.svg" alt="">
+          <h3>Thank you!</h3>
+          <p>We've added your card details</p>
+          <a id="thankbtn">Continue</a>
+        </div>
+
+      </div>
+    </div>
+  </main>
+  
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+  <script src="js/main.js"></script>
+</body>
+</html>
